@@ -26,4 +26,15 @@ function getHoroscope(requestedDate, requestedSign) {
             console.log(json)
         });
 }
+var selectedHoroscope = document.getElementById("horoscopeSelector");
+
+selectedHoroscope.addEventListener("change",function selectSign(event){
+    var previousDayHoroscope = getHoroscope("yesterday",event.target.value);
+    var currentDayHoroscope = getHoroscope("today",event.target.value);
+    var nextDayHoroscope = getHoroscope("tomorrow",event.target.value);
+})
+
+
+
+
 

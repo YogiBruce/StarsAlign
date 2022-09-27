@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url("../images/stars-align-background.jpg");
+}
+
+h1 {
+    color: white;
+}
+
+.container {
+    background-color: white;
+    opacity: 60%;
+}

@@ -21,8 +21,8 @@
     })
         .then(response => response.json());
 
-    const data = await horoscopeData;
-    return(await data.description)
+    const data = await  horoscopeData;
+    return(data.description)
 
  }
 // Construct selector object

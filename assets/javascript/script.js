@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var selectedHoroscope = document.getElementById("horoscopeSelector");
 
 async function populateHoroscope(requestedDate, requestedSign) {
@@ -40,7 +39,7 @@ selectedHoroscope.addEventListener("change", function selectSign(event) {
 })
 
 
-=======
+
 famousPeople
 const famous = document.querySelector("#famousPeople");
 var celebrities = {
@@ -326,9 +325,9 @@ function displayCelebrities(sign) {
       listItem.appendChild(birthdaySpan);
    }
 }
-=======
+
 
 
 //Dropdown trigger
 
->>>>>>> b0a2b1c686a241fd6fd89e2ba7c3a5c80673fd76
+

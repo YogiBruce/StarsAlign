@@ -326,8 +326,21 @@ function displayCelebrities(sign) {
    }
 }
 
-
-
 //Dropdown trigger
 
+// astronomy api stuff
 
+async function getAstronomy() {
+   let apiAstronomyInfo = fetch("https://go-apod.herokuapp.com/apod")
+      .then(response => response.json());
+      console.log(apiAstronomyInfo);
+   let data = await apiAstronomyInfo;
+const date = document.querySelector("#date");
+   date.textContent = data.date;
+const title = document.querySelector("#title");
+   title.textContent = data.title;
+const explanation = document.querySelector("#explanation");
+   explanation.textContent = data.explanation;
+}
+
+getAstronomy();

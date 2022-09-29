@@ -1,5 +1,6 @@
+var selectedHoroscope = document.getElementById("horoscopeSelector");
 
- async function getHoroscope(requestedDate, requestedSign) {
+async function populateHoroscope(requestedDate, requestedSign) {
     // Below are exammple results from this function 
     //
     // "date_range": "May 21 - Jun 21",
@@ -11,45 +12,30 @@
     // "lucky_number": "45",
     // "lucky_time": "1am"
     //
-    // var horoscopeObjectExample = getHoroscope("today", "gemini");
+    // populateHoroscope("today", "gemini");
     //
     // requestedDate options = "today", "yesterday", "tomorrow"
     //
     var horoscopeURL = 'https://aztro.sameerkumar.website/?sign=' + requestedSign + "&day=" + requestedDate;
-    var horoscopeData = fetch(horoscopeURL, {
-        method: 'POST'
-    })
+    var horoscopeData = fetch(horoscopeURL, { method: 'POST' })
         .then(response => response.json());
 
-    const data = await  horoscopeData;
-    return(data.description)
+    // Assign result from horoscopeData fetch, to variable "data"
+    const data = await horoscopeData;
+    const horoscope = document.querySelector("#" + requestedDate);
 
- }
-// Construct selector object
-var selectedHoroscope = document.getElementById("horoscopeSelector");
+    horoscope.textContent = data.description;
+
+}
 
 // Event listener for selector up top
 selectedHoroscope.addEventListener("change", function selectSign(event) {
 
     // Populate horoscopes based on selected option
-    var previousDayHoroscope = getHoroscope("yesterday", event.target.value);
-    console.log(previousDayHoroscope);
-    var currentDayHoroscope = getHoroscope("today", event.target.value);
-    var nextDayHoroscope = getHoroscope("tomorrow", event.target.value);
-    // Populate element objects from DOM for dynamic change
-    var previousDayElement = document.getElementById("yesterdayHoroscope");
-    var currentDayElement = document.getElementById("todayHoroscope");
-    var nextDayElement = document.getElementById("tomorrowHoroscope");
+    populateHoroscope("yesterday", event.target.value);
+    populateHoroscope("today", event.target.value);
+    populateHoroscope("tomorrow", event.target.value);
 
-    // Function to change data dynamically on event call
-    function fillOutHoroscopeCard(cardElement, cardData) {
-        cardElement.getElementsByTagName("p").textContent = cardData;
-    }
-
-    //Run above function for three options
-    fillOutHoroscopeCard(previousDayElement, previousDayHoroscope);
-    fillOutHoroscopeCard(currentDayElement, currentDayHoroscope);
-    fillOutHoroscopeCard(nextDayElement, nextDayHoroscope);
 })
 
 

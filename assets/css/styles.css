@@ -17,3 +17,8 @@ h1 {
     background-color: white;
     opacity: 60%;
 }
+
+.horoscopeSelector{
+    display:block;
+    width: 150px;
+}

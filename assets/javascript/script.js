@@ -1,3 +1,4 @@
+famousPeople
 const famous = document.querySelector("#famousPeople");
 var celebrities = {
    aries: [
@@ -282,3 +283,8 @@ function displayCelebrities(sign) {
       listItem.appendChild(birthdaySpan);
    }
 }
+=======
+
+
+//Dropdown trigger
+

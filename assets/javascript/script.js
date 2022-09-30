@@ -35,6 +35,7 @@ selectedHoroscope.addEventListener("change", function selectSign(event) {
     populateHoroscope("yesterday", event.target.value);
     populateHoroscope("today", event.target.value);
     populateHoroscope("tomorrow", event.target.value);
+    displayCelebrities(event.target.value);
 
 })
 
@@ -318,11 +319,24 @@ function displayCelebrities(sign) {
 
    for (let i = 0; i < celebs.length; i++) {
       let listItem = document.createElement("li");
-      listItem.textContent = celebs[i].name;
-      famous.appendChild(listItem);
-      let birthdaySpan = document.createElement("span");
-      birthdaySpan.textContent = celebs[i].birthday;
-      listItem.appendChild(birthdaySpan);
+      
+      if(famous.childElementCount < celebs.length){
+         listItem.textContent = celebs[i].name;
+         famous.appendChild(listItem);
+         let birthdaySpan = document.createElement("span");
+         birthdaySpan.textContent = celebs[i].birthday;
+         listItem.appendChild(birthdaySpan);
+         continue;
+      }
+      else if(famous.childElementCount == celebs.length){
+         famous.innerHTML='';
+         listItem.textContent = celebs[i].name;
+         famous.appendChild(listItem);
+         let birthdaySpan = document.createElement("span");
+         birthdaySpan.textContent = celebs[i].birthday;
+         listItem.appendChild(birthdaySpan);
+         continue;
+      }
    }
 }
 

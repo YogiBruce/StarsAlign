@@ -322,19 +322,23 @@ function displayCelebrities(sign) {
       
       if(famous.childElementCount < celebs.length){
          listItem.textContent = celebs[i].name;
+         listItem.classList.add("fPname");
          famous.appendChild(listItem);
          let birthdaySpan = document.createElement("span");
          birthdaySpan.textContent = celebs[i].birthday;
          listItem.appendChild(birthdaySpan);
+         birthdaySpan.classList.add("fPdate");
          continue;
       }
       else if(famous.childElementCount == celebs.length){
          famous.innerHTML='';
          listItem.textContent = celebs[i].name;
+         listItem.classList.add("fPname");
          famous.appendChild(listItem);
          let birthdaySpan = document.createElement("span");
          birthdaySpan.textContent = celebs[i].birthday;
          listItem.appendChild(birthdaySpan);
+         birthdaySpan.classList.add("fPdate");
          continue;
       }
    }

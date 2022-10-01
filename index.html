@@ -8,32 +8,34 @@
     , initial-scale=1.0">
     <title>Stars Align</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
-<body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<body class="valign-wrapper" style="height:100vh">
+    <div class= "row valign">
+        <h1 class="row center-align">Stars Align</h1>
+        <!-- drop down menu here -->
+        <select id="indexHoroscopeSelector" class="horoscopeSelector row center-align">
+            <option value="" disabled selected>Select your sign</option>
+            <option value="aries">Aries</option>
+            <option value="taurus">Taurus</option>
+            <option value="gemini">Gemini</option>
+            <option value="cancer">Cancer</option>
+            <option value="leo">Leo</option>
+            <option value="virgo">Virgo</option>
+            <option value="libra">Libra</option>
+            <option value="scorpio">Scorpio</option>
+            <option value="sagittarius">Sagittarius</option>
+            <option value="capricorn">Capricorn</option>
+            <option value="aquarius">Aquarius</option>
+            <option value="pisces">Pisces</option>
+        </select>
+    </div>
 
-<div class="valign-wrapper">
-    <h1>Stars Align</h1>
-    <!-- drop down menu here -->
-    <select id="indexHoroscopeSelector" class="horoscopeSelector valign-wrapper">
-        <option value="" disabled selected>Select your sign</option>
-        <option value="aries">Aries</option>
-        <option value="taurus">Taurus</option>
-        <option value="gemini">Gemini</option>
-        <option value="cancer">Cancer</option>
-        <option value="leo">Leo</option>
-        <option value="virgo">Virgo</option>
-        <option value="libra">Libra</option>
-        <option value="scorpio">Scorpio</option>
-        <option value="sagittarius">Sagittarius</option>
-        <option value="capricorn">Capricorn</option>
-        <option value="aquarius">Aquarius</option>
-        <option value="pisces">Pisces</option>
-    </select>    
-</div>
-    
-<script src="./assets/javascript/indexScript.js"></script>
+
+
+
+    <script src="./assets/javascript/indexScript.js"></script>
 </body>
 
 </html>

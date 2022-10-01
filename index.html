@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>Stars Align</title>
-    <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 <div class="valign-wrapper">
     <h1>Stars Align</h1>
     <!-- drop down menu here -->
-    <select id="horoscopeSelector" class="horoscopeSelector valign-wrapper" onchange="goToPage()">
+    <select id="indexHoroscopeSelector" class="horoscopeSelector valign-wrapper">
         <option value="" disabled selected>Select your sign</option>
         <option value="aries">Aries</option>
         <option value="taurus">Taurus</option>
@@ -29,15 +30,10 @@
         <option value="capricorn">Capricorn</option>
         <option value="aquarius">Aquarius</option>
         <option value="pisces">Pisces</option>
-    </select>
-    <script>
-        function goToPage() {
-            window.location.href = 'page.html'
-        }
-    </script>
-    
+    </select>    
 </div>
     
+<script src="./assets/javascript/indexScript.js"></script>
 </body>
 
 </html>

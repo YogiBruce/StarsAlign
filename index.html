@@ -4,83 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
     <title>Stars Align</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Roboto:wght@300;400;700&family=Shadows+Into+Light&family=Staatliches&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
 </head>
 
 <body>
-    <h1>Stars Align</h1>
-
-    <!-- drop down menu here -->
-    <div class="input-field col s12" , align-items="right">
-        <select id="horoscopeSelector" class="horoscopeSelector">
-            <option value="" disabled selected>Select your sign</option>
-            <option value="aries">Aries</option>
-            <option value="taurus">Taurus</option>
-            <option value="gemini">Gemini</option>
-            <option value="cancer">Cancer</option>
-            <option value="leo">Leo</option>
-            <option value="virgo">Virgo</option>
-            <option value="libra">Libra</option>
-            <option value="scorpio">Scorpio</option>
-            <option value="sagittarius">Sagittarius</option>
-            <option value="capricorn">Capricorn</option>
-            <option value="aquarius">Aquarius</option>
-            <option value="pisces">Pisces</option>
-        </select>
-    </div>
-
-    <div id="main-container">
-    <!-- horoscopes -->
-    <div id="outer-container">
-        <div class="container">
-            <!-- today -->
-            <h3 id="signName"></h3>
-            <h5>Today's Horoscope:</h5>
-            <p id="today"></p>
-        </div>
-        <div class="small-horiscope">
-            <div class="container-small">
-                <!-- yesterday -->
-                <h5>Yesterday's Horoscope:</h5>
-                <p id="yesterday"></p>
-            </div>
-            <div class="container-small">
-                <!-- tomorrow -->
-                <h5>Tomorrow's Horoscope:</h5>
-                <p id="tomorrow"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- astronomy picture of the day -->
-    <div class="column-container">
-        <div id="column1">
-            <h4>Astronomy Picture of the Day:</h4>
-            <img src="https://go-apod.herokuapp.com/image" alt="atronomy photo updated daily">
-            <h3 id="title"></h3>
-            <p id="date"></p>
-            <p id="explanation"></p>
-        </div>
-
-        <!-- famous people -->
-        <div id="column3">
-            <h4>Famous People of the Same Sign:</h4>
-            <ul id="famousPeople">
-
-            </ul>
-        </div>
-    </div>
-</div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/javascript/script.js"></script>
+<div class="valign-wrapper">
+    <h1>Stars Align</h1>
+    <!-- drop down menu here -->
+    <select id="horoscopeSelector" class="horoscopeSelector valign-wrapper" onchange="goToPage()">
+        <option value="" disabled selected>Select your sign</option>
+        <option value="aries">Aries</option>
+        <option value="taurus">Taurus</option>
+        <option value="gemini">Gemini</option>
+        <option value="cancer">Cancer</option>
+        <option value="leo">Leo</option>
+        <option value="virgo">Virgo</option>
+        <option value="libra">Libra</option>
+        <option value="scorpio">Scorpio</option>
+        <option value="sagittarius">Sagittarius</option>
+        <option value="capricorn">Capricorn</option>
+        <option value="aquarius">Aquarius</option>
+        <option value="pisces">Pisces</option>
+    </select>
+    <script>
+        function goToPage() {
+            window.location.href = 'page.html'
+        }
+    </script>
+    
+</div>
+    
 </body>
 
 </html>

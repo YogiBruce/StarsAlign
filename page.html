@@ -77,20 +77,23 @@
             </div>
         </div>
     </div>
-    <iframe width="1" height="1" src="https://www.youtube.com/embed/m86mBRKZHY0?controls=0;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="hide">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/m86mBRKZHY0?controls=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/javascript/script.js"></script>
 
     <script>var tag = document.createElement('script');
+
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '1',
-          width: '1',
+          height: '200',
+          width: '200',
           videoId: 'm86mBRKZHY0',
           playerVars: {
             'playsinline': 1

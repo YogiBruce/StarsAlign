@@ -1,4 +1,6 @@
-var selectedHoroscope = document.getElementById("horoscopeSelector");
+var pageSelectedHoroscope = document.getElementById("pageHoroscopeSelector");
+var indexSelectedHoroscope = document.getElementById("indexHoroscopeSelector")
+
 
 async function populateHoroscope(requestedDate, requestedSign) {
    // Below are exammple results from this function 
@@ -28,20 +30,26 @@ async function populateHoroscope(requestedDate, requestedSign) {
 
 }
 
-// Event listener for selector up top
-selectedHoroscope.addEventListener("change", function selectSign(event) {
 
+
+//Event listener function for landing page
+
+
+
+
+// Event listener for selector up top
+pageSelectedHoroscope.addEventListener("change", function selectSign(event) {
+   localStorage.setItem('sign', event.target.value)
    // Populate horoscopes based on selected option
    populateHoroscope("yesterday", event.target.value);
    populateHoroscope("today", event.target.value);
    populateHoroscope("tomorrow", event.target.value);
+   console.log(event.target.value)
    displayCelebrities(event.target.value);
 
 })
 
 
-
-famousPeople
 const famous = document.querySelector("#famousPeople");
 var celebrities = {
    aries: [
@@ -311,6 +319,7 @@ var celebrities = {
 }
 
 function famousPeople(sign) {
+   console.log(sign+"22222")
    return celebrities[sign];
 }
 
@@ -344,7 +353,7 @@ function displayCelebrities(sign) {
    }
 }
 
-//Dropdown trigger
+
 
 // astronomy api stuff
 
@@ -362,3 +371,15 @@ async function getAstronomy() {
 }
 
 getAstronomy();
+function newPageHoroscope(){
+   newPageHoroscopePopulate();
+}
+function newPageHoroscopePopulate(){
+   console.log(localStorage.getItem('sign'));
+   populateHoroscope("yesterday", localStorage.getItem('sign'));
+   populateHoroscope("today", localStorage.getItem('sign'));
+   populateHoroscope("tomorrow", localStorage.getItem('sign'));
+   displayCelebrities(String(localStorage.getItem('sign')));
+}
+
+newPageHoroscope();

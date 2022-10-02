@@ -46,6 +46,7 @@ pageSelectedHoroscope.addEventListener("change", function selectSign(event) {
    populateHoroscope("tomorrow", event.target.value);
    console.log(event.target.value)
    displayCelebrities(event.target.value);
+   document.getElementById('signName').innerHTML = (String(localStorage.getItem('sign'))).toUpperCase()
 
 })
 
@@ -380,6 +381,7 @@ function newPageHoroscopePopulate(){
    populateHoroscope("today", localStorage.getItem('sign'));
    populateHoroscope("tomorrow", localStorage.getItem('sign'));
    displayCelebrities(String(localStorage.getItem('sign')));
+   document.getElementById('signName').innerHTML = (String(localStorage.getItem('sign'))).toUpperCase()
 }
 
 newPageHoroscope();

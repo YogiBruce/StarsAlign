@@ -71,6 +71,6 @@ h1 {
 
 @media screen and (max-width: 480px ) {
     body {
-        background-repeat: repeat-y;
+        background-size: 100%;
     }
 }

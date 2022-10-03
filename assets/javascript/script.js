@@ -1,6 +1,7 @@
 var pageSelectedHoroscope = document.getElementById("pageHoroscopeSelector");
 var indexSelectedHoroscope = document.getElementById("indexHoroscopeSelector")
 
+//Async function to generate horocope from Aztro api
 
 async function populateHoroscope(requestedDate, requestedSign) {
    // Below are exammple results from this function 
@@ -30,17 +31,11 @@ async function populateHoroscope(requestedDate, requestedSign) {
 
 }
 
+// Event listener for selector on page.html
 
-
-//Event listener function for landing page
-
-
-
-
-// Event listener for selector up top
 pageSelectedHoroscope.addEventListener("change", function selectSign(event) {
    localStorage.setItem('sign', event.target.value)
-   // Populate horoscopes based on selected option
+   // Populate horoscopes based on selected option for yesterday, today, tomorrow
    populateHoroscope("yesterday", event.target.value);
    populateHoroscope("today", event.target.value);
    populateHoroscope("tomorrow", event.target.value);
@@ -50,7 +45,7 @@ pageSelectedHoroscope.addEventListener("change", function selectSign(event) {
 
 })
 
-
+//Celebrities stored in object.
 const famous = document.querySelector("#famousPeople");
 var celebrities = {
    aries: [
@@ -319,10 +314,14 @@ var celebrities = {
    ]
 }
 
+//Function to call celebrities from object based on selected sign.
+
 function famousPeople(sign) {
    console.log(sign+"22222")
    return celebrities[sign];
 }
+
+//Generate celebs to DOM for all celebrities with same sign.
 
 function displayCelebrities(sign) {
    let celebs = famousPeople(sign);
@@ -356,7 +355,7 @@ function displayCelebrities(sign) {
 
 
 
-// astronomy api stuff
+//Astronomy API generates Photo of the Day to DOM
 
 async function getAstronomy() {
    let apiAstronomyInfo = fetch("https://go-apod.herokuapp.com/apod")
@@ -370,6 +369,8 @@ async function getAstronomy() {
    const explanation = document.querySelector("#explanation");
    explanation.textContent = data.explanation;
 }
+
+//Function to generate astrology and celebrities upon selection from landing page
 
 getAstronomy();
 function newPageHoroscope(){

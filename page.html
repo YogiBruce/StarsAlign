@@ -14,74 +14,74 @@
 </head>
 
 <body>
-    <h1>Stars Align</h1>
+    <div class="row center-align">
+        <h1 class="row col s12">Stars Align</h1>
+        <!-- Drop down menu -->
+        <div class="row input-field col s12 ">
+            <select id="pageHoroscopeSelector" class="horoscopeSelector row col s8 m2 offset-s2 offset-m9 center-align">
+                <option value="" disabled selected>Select your sign</option>
+                <option value="aries">Aries</option>
+                <option value="taurus">Taurus</option>
+                <option value="gemini">Gemini</option>
+                <option value="cancer">Cancer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Scorpio</option>
+                <option value="sagittarius">Sagittarius</option>
+                <option value="capricorn">Capricorn</option>
+                <option value="aquarius">Aquarius</option>
+                <option value="pisces">Pisces</option>
+            </select>
+        </div>
 
-    <!-- drop down menu here -->
-    <div class="input-field col s12" , align-items="right">
-        <select id="pageHoroscopeSelector" class="horoscopeSelector">
-            <option value="" disabled selected>Select your sign</option>
-            <option value="aries">Aries</option>
-            <option value="taurus">Taurus</option>
-            <option value="gemini">Gemini</option>
-            <option value="cancer">Cancer</option>
-            <option value="leo">Leo</option>
-            <option value="virgo">Virgo</option>
-            <option value="libra">Libra</option>
-            <option value="scorpio">Scorpio</option>
-            <option value="sagittarius">Sagittarius</option>
-            <option value="capricorn">Capricorn</option>
-            <option value="aquarius">Aquarius</option>
-            <option value="pisces">Pisces</option>
-        </select>
-    </div>
-
-    <div id="main-container">
-        <!-- horoscopes -->
-        <div id="outer-container">
-            <div class="container">
-                <!-- today -->
-                <h3 id="signName"></h3>
-                <h5>Today's Horoscope:</h5>
-                <p id="today"></p>
+        <!--Horoscope Display-->
+        <div class="infoContainer row col s8 offset-s2">
+            <!-- today -->
+            <h3 id="signName">Sign Name</h3>
+            <h5>Today's Horoscope:</h5>
+            <p id="today"></p>
+        </div>
+        <div class="row horoscopeBlock">
+            <div class="infoContainer horoscopeBlockItem row col s5">
+                <!-- yesterday -->
+                <h5>Yesterday's Horoscope:</h5>
+                <p id="yesterday"></p>
             </div>
-            <div class="small-horiscope">
-                <div class="container-small">
-                    <!-- yesterday -->
-                    <h5>Yesterday's Horoscope:</h5>
-                    <p id="yesterday"></p>
-                </div>
-                <div class="container-small">
-                    <!-- tomorrow -->
-                    <h5>Tomorrow's Horoscope:</h5>
-                    <p id="tomorrow"></p>
-                </div>
+            <div class="infoContainer horoscopeBlockItem row col s5 offset-s2">
+                <!-- tomorrow -->
+                <h5>Tomorrow's Horoscope:</h5>
+                <p id="tomorrow"></p>
             </div>
         </div>
 
-        <!-- astronomy picture of the day -->
-        <div class="column-container">
-            <div id="column1">
+        <!--Lower Display Fields-->
+        <div class="row secondaryBlock">
+            <!--Astronomy Photo API-->
+            <div class="infoContainer  col s12 m6 l8">
                 <h4>Astronomy Picture of the Day:</h4>
-                <img src="https://go-apod.herokuapp.com/image" alt="atronomy photo updated daily">
+                <img src="https://go-apod.herokuapp.com/image" alt="atronomy photo updated daily" style="width:100%">
                 <h3 id="title"></h3>
                 <p id="date"></p>
                 <p id="explanation"></p>
             </div>
 
-            <!-- famous people -->
-            <div id="column3">
+            <!-- Famous People -->
+            <div class="infoContainer col s12 m5 l3 offset-m1 offset-l1">
                 <h4>Famous People of the Same Sign:</h4>
                 <ul id="famousPeople">
-
                 </ul>
             </div>
         </div>
     </div>
+
+    <!--YouTube iframe in hidden block for background music-->
     <div class="hide">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/m86mBRKZHY0?controls=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Scripts: Materialize library, local Javascript-->
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="./assets/javascript/script.js"></script>
 
     <script>var tag = document.createElement('script');
@@ -90,18 +90,18 @@
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '315',
-          width: '560',
-          videoId: 'm86mBRKZHY0',
-          playerVars: {
-            'playsinline': 1
-          },
-        });
-        console.log("playing")
-      }
-     </script>
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'm86mBRKZHY0',
+                playerVars: {
+                    'playsinline': 1
+                },
+            });
+            console.log("playing")
+        }
+    </script>
 </body>
 
 </html>

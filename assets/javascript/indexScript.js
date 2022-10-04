@@ -1,3 +1,4 @@
+//Script for selector on index landing page
 
 var indexSelectedHoroscope = document.getElementById("indexHoroscopeSelector")
 
